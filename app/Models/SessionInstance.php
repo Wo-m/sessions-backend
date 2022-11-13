@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class SessionInstance extends Model
 {
     use HasFactory;
+
+    public function exerciseInstances()
+    {
+        return $this->hasMany('ExerciseInstance');
+    }
 }

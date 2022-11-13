@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('exercises', function (Blueprint $table) {
+        Schema::create('exercise', function (Blueprint $table) {
             $table->id();
-            $table->string('insertedBy');
+            $table->integer('insertedBy');
             $table->timestamps();
             $table->string('name');
         });

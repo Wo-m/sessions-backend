@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('exercise_instances', function (Blueprint $table) {
+        Schema::create('exercise_instance', function (Blueprint $table) {
             $table->id();
-            $table->string('insertedBy');
+            $table->integer('insertedBy');
             $table->timestamps();
-            $table->integer('exerciseReferenceId');  // maps to exercise for name
-            $table->integer('sessionInstanceId');  // sessionI has 1 - M for sessionI to exerciseI
+            $table->integer('exercise_id');  // maps to exercise for name
+            $table->integer('session_instance_id');  // sessionI has 1 - M for sessionI to exerciseI
         });
     }
 

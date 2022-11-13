@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ExerciseInstance extends Model
 {
     use HasFactory;
+
+    public function efforts()
+    {
+        return $this->hasMany('effort');
+    }
 }
