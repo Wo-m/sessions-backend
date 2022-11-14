@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('session_instance', function (Blueprint $table) {
+        Schema::create('session_instances', function (Blueprint $table) {
             $table->id();
-            $table->integer('insertedBy');
+            $table->integer('inserted_by');
             $table->timestamps();
-            $table->integer('session_id');
+            $table->foreignId('session_id');
         });
     }
 

@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('effort', function (Blueprint $table) {
+        Schema::create('efforts', function (Blueprint $table) {
             $table->id();
-            $table->integer('insertedBy');
+            $table->integer('inserted_by');
             $table->timestamps();
-            $table->integer('exercise_instance_id');
+            $table->foreignId('exercise_instance_id');
             $table->integer('set');
             $table->integer('reps');
             $table->float('weight');

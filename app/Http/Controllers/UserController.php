@@ -22,7 +22,7 @@ class UserController extends Controller {
 
         // create user model
         $data = $validator->validated();
-        $user = User::create($data);
+        $user = new User($data);
 
         // action
         return CreateUser::run($user);

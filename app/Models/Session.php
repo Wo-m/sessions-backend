@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
-class Session extends Model
+class Session extends AbstractModel
 {
     use HasFactory;
 
@@ -13,4 +14,5 @@ class Session extends Model
     {
         return $this->hasMany('SessionInstance');
     }
+
 }

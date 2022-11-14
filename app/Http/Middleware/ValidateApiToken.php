@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Sanctum\PersonalAccessToken;
 
 class ValidateApiToken
@@ -29,6 +30,9 @@ class ValidateApiToken
         if ($user->id !== $id) {
             abort(401);
         }
+
+        // auth this user
+        Auth::login($user);
 
         return $next($request);
     }
