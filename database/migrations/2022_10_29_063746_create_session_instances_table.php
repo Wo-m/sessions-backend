@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('repsets', function (Blueprint $table) {
+        Schema::create('session_instance', function (Blueprint $table) {
             $table->id();
-            $table->integer('set');
-            $table->integer('rep');
-            $table->float('weight');
+            $table->integer('insertedBy');
             $table->timestamps();
+            $table->integer('session_id');
         });
     }
 
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('repsets');
+        Schema::dropIfExists('session_instances');
     }
 };
