@@ -15,6 +15,6 @@ class AuthenticateUser {
 
             return ['token' => $token->plainTextToken, 'id' => $user->getId()];
         }
-        abort(401);
+        return response()->json(['error'=>'invalid auth'], 401);
     }
 }

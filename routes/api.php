@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::post('/user/create', [UserController::class, 'createUser']);
 Route::post('/auth', [AuthenticationController::class, 'authenticate']);
 
-// TODO
+
 Route::middleware('apiAuth')->group(function () {
     Route::get('/test', function (){
         return 'authed';
