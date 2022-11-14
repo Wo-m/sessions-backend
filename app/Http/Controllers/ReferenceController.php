@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Actions\SaveExercise;
 use App\Actions\SaveSession;
+use App\Http\Resources\SessionResource;
 use App\Models\Effort;
 use App\Models\ExerciseInstance;
 use App\Models\Session;
@@ -32,11 +33,13 @@ class ReferenceController
     }
 
 
-
+    /***
+     * $request contains the session name, and a base session instance
+     **/
     public function saveSession(Request $request) {
         $validator = Validator::make($request->all(), [
             'name' => ['required', 'max:255'],
-            'sessionInstances' => 'required',
+            'base' => 'required',
         ]);
 
         if ($validator->fails()) {
