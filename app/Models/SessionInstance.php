@@ -11,6 +11,6 @@ class SessionInstance extends AbstractModel
 
     public function exerciseInstances()
     {
-        return $this->hasMany('ExerciseInstance');
+        return $this->hasMany(ExerciseInstance::class);
     }
 }

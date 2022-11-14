@@ -36,4 +36,7 @@ Route::middleware('apiAuth')->group(function () {
     });
 
     Route::post('/exercise', [ReferenceController::class, 'saveExercise']);
+    Route::post('/session', [ReferenceController::class, 'saveSession']);
+
+
 });

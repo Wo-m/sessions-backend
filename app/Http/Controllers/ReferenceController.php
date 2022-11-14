@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Actions\SaveExercise;
+use App\Actions\SaveSession;
+use App\Models\Effort;
+use App\Models\ExerciseInstance;
+use App\Models\Session;
+use App\Models\SessionInstance;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -26,4 +31,19 @@ class ReferenceController
         return SaveExercise::run($data['name']);
     }
 
+
+
+    public function saveSession(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'max:255'],
+            'sessionInstances' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+
+        $data = $validator->validate();
+        return SaveSession::run($data);
+    }
 }

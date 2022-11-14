@@ -9,8 +9,12 @@ class ExerciseInstance extends AbstractModel
 {
     use HasFactory;
 
+    protected $fillable = [
+        'exercise_id'
+    ];
+
     public function efforts()
     {
-        return $this->hasMany('effort');
+        return $this->hasMany(Effort::class);
     }
 }
