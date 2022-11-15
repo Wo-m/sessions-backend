@@ -32,11 +32,7 @@ Route::post('/auth', [AuthenticationController::class, 'authenticate']);
 
 
 Route::middleware('apiAuth')->group(function () {
-    Route::get('/test', function (){
-        return 'authed';
-    });
-
-    Route::post('/exercise', [ReferenceController::class, 'saveExercise']);
-    Route::post('/session', [ReferenceController::class, 'saveSession']);
+    Route::post('/reference/exercise/save', [ReferenceController::class, 'saveExercise']);
+    Route::post('/reference/session/save', [ReferenceController::class, 'saveSession']);
     Route::post('/instance/session/save', [InstanceController::class, 'saveSessionInstance']);
 });

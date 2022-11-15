@@ -16,7 +16,7 @@ class SaveSessionInstance
     public function handle($data) {
 
         DB::beginTransaction();
-        
+
         $sessionInstance = new SessionInstance();
         $sessionInstance->session_id = $data['session_id'];
         $sessionInstance->save();
@@ -31,6 +31,8 @@ class SaveSessionInstance
                 $effort->save();
             }
         }
+
+        DB::commit();
 
         return new SessionInstanceResource($sessionInstance);
     }

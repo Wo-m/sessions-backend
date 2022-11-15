@@ -9,15 +9,16 @@ use Illuminate\Support\Facades\Validator;
 class InstanceController
 {
     public function saveSessionInstance(Request $request) {
-        // TODO validate request
-        //  ensure session_id exists
-        //  ensure exercise_id exists
-        //  ensure efforts set values count correctly
-
         $validator = Validator::make($request->all(), [
-            'session_id' => ['required'],
-            'exerciseInstances' =>['required']
+            'session_id' => ['required', 'exists:sessions,id'],
+            'exerciseInstances.*.exercise_id' =>['required', 'exists:exercises,id'],
+            'exerciseInstances.*.efforts.*' => ['required'],
+            'exerciseInstances.*.efforts.*.set' => ['required', 'distinct']
         ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
 
         $data = $validator->validate();
         return SaveSessionInstance::run($data);
