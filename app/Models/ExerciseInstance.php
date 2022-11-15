@@ -17,4 +17,8 @@ class ExerciseInstance extends AbstractModel
     {
         return $this->hasMany(Effort::class);
     }
+
+    public function exercise() {
+        return $this->belongsTo(Exercise::class);
+    }
 }

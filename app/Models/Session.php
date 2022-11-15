@@ -14,7 +14,7 @@ class Session extends AbstractModel
         'name'
     ];
 
-    public function sessionInstances()
+    public function instances()
     {
         return $this->hasMany(SessionInstance::class);
     }
