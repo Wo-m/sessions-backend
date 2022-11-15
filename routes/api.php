@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\InstanceController;
 use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\UserController;
 use App\Models\Exercise;
@@ -37,6 +38,5 @@ Route::middleware('apiAuth')->group(function () {
 
     Route::post('/exercise', [ReferenceController::class, 'saveExercise']);
     Route::post('/session', [ReferenceController::class, 'saveSession']);
-
-
+    Route::post('/instance/session/save', [InstanceController::class, 'saveSessionInstance']);
 });
