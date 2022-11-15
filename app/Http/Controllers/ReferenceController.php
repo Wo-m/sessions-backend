@@ -12,22 +12,13 @@ use App\Models\SessionInstance;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class ReferenceController
+class ReferenceController extends AbstractController
 {
 
     public function saveExercise(Request $request) {
-
-        // validate the user data
-        $validator = Validator::make($request->all(), [
+        $data = $this->validateRequest($request, [
             'name' => ['required', 'max:255'],
         ]);
-
-        if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
-        }
-
-        // create user model
-        $data = $validator->validated();
 
         return SaveExercise::run($data['name']);
     }
@@ -37,16 +28,11 @@ class ReferenceController
      * $request contains the session name, and a base session instance
      **/
     public function saveSession(Request $request) {
-        $validator = Validator::make($request->all(), [
+        $data = $this->validateRequest($request, [
             'name' => ['required', 'max:255'],
             'base' => 'required',
         ]);
 
-        if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
-        }
-
-        $data = $validator->validate();
         return SaveSession::run($data);
     }
 }
