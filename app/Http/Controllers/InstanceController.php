@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\GetExerciseData;
 use App\Actions\SaveSessionInstance;
+use App\Models\SessionInstance;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -17,4 +19,15 @@ class InstanceController extends AbstractController
         ]);
         return SaveSessionInstance::run($data);
     }
+
+    public function getExerciseData($exercise_id)
+    {
+        return GetExerciseData::run($exercise_id);
+    }
+
+    public function getExerciseInstances($exercise_id, $session_id = null)
+    {
+        return;
+    }
+
 }

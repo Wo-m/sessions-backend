@@ -32,7 +32,17 @@ Route::post('/auth', [AuthenticationController::class, 'authenticate']);
 
 
 Route::middleware('apiAuth')->group(function () {
-    Route::post('/reference/exercise/save', [ReferenceController::class, 'saveExercise']);
-    Route::post('/reference/session/save', [ReferenceController::class, 'saveSession']);
-    Route::post('/instance/session/save', [InstanceController::class, 'saveSessionInstance']);
+    Route::controller(ReferenceController::class)->group(function () {
+        Route::post('/reference/exercise/save', 'saveExercise');
+        Route::post('/reference/session/save', 'saveSession');
+        Route::get('/reference/session/{id}/base','getBaseSession');
+    });
+
+    Route::controller(InstanceController::class)->group(function () {
+        Route::post('/instance/session/save', 'saveSessionInstance');
+        Route::get('/instance/exercise/data/{exercise_id}','getExerciseData');  // data for visuals
+        Route::get('/instance/exercise/{exercise_id}','getExerciseInstances');  // raw instances
+        Route::get('/instance/exercise/{exercise_id}/{session_id}','getExerciseInstances');  // raw instances
+    });
+
 });

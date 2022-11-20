@@ -9,6 +9,10 @@ class SessionInstance extends AbstractModel
 {
     use HasFactory;
 
+    protected $fillable = [
+        'session_id'
+    ];
+
     public function exerciseInstances()
     {
         return $this->hasMany(ExerciseInstance::class);

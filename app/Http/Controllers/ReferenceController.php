@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\GetBaseSession;
 use App\Actions\SaveExercise;
 use App\Actions\SaveSession;
 use App\Http\Resources\SessionResource;
@@ -34,5 +35,9 @@ class ReferenceController extends AbstractController
         ]);
 
         return SaveSession::run($data);
+    }
+
+    public function getBaseSession($id) {
+        return GetBaseSession::run($id);
     }
 }
