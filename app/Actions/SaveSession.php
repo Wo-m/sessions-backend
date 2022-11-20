@@ -23,25 +23,9 @@ class SaveSession
         $session->save();
 
         // save base session instance
-        $base = new SessionInstance();
-        $base->session_id = $session->id;
-        $base->save();
-
-        // save exercise instances
-        foreach($data['base']['exerciseInstances'] as $instance) {
-            $exerciseInstance = new ExerciseInstance($instance);
-            $exerciseInstance->session_instance_id = $base->id;
-            $exerciseInstance->save();
-
-            // Save efforts
-            foreach($instance['efforts'] as $effortData) {
-                $effort = new Effort($effortData);
-                $effort->exercise_instance_id = $exerciseInstance->id;
-                $effort->save();
-            }
-        }
-        // FIXME the data is here, need a cleaner way of obtaining it, resources
-        $out = Session::find($session->id); //->sessionInstances()->first()->exerciseInstances()->first()->efforts()->first();
+        $sessionInstanceData = $data['base'];
+        $sessionInstanceData['session_id'] = $session->id;
+        SaveSessionInstance::run($sessionInstanceData);
 
         DB::commit();
 
