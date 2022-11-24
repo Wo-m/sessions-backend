@@ -4,7 +4,6 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\InstanceController;
 use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\UserController;
-use App\Models\Exercise;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

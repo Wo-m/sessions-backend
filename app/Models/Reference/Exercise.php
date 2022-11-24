@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Reference;
 
+use App\Models\AbstractModel;
 use App\Models\Instance\ExerciseInstance;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Exercise extends AbstractModel
 {
-    use HasFactory;
-
     protected $fillable = [
         'name'
     ];

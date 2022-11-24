@@ -3,7 +3,7 @@
 namespace App\Actions;
 
 use App\Http\Resources\SessionResource;
-use App\Models\Session;
+use App\Models\Reference\Session;
 use Illuminate\Support\Facades\DB;
 use Lorisleiva\Actions\Concerns\AsAction;
 

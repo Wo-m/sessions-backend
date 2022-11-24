@@ -7,5 +7,4 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cardio extends Model
 {
-    use HasFactory;
 }

@@ -3,7 +3,7 @@
 namespace App\Models\Instance;
 
 use App\Models\AbstractModel;
-use App\Models\Exercise;
+use App\Models\Reference\Exercise;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
@@ -14,8 +14,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  */
 class ExerciseInstance extends AbstractModel
 {
-    use HasFactory;
-
     protected $fillable = [
         'exercise_id'
     ];

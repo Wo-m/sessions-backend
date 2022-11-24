@@ -2,17 +2,15 @@
 
 namespace App\Models\Base;
 
-use App\Models\Exercise;
+use App\Models\AbstractModel;
+use App\Models\Reference\Exercise;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * Base Exercise, used to build instances
  */
-class ExerciseBase extends Model
+class ExerciseBase extends AbstractModel
 {
-    use HasFactory;
-
     public function efforts()
     {
         return $this->hasMany(EffortBase::class);

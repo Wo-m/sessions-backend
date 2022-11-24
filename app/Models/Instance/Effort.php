@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Effort extends AbstractModel
 {
-    use HasFactory;
-
     protected $fillable = [
         'set',
         'reps',

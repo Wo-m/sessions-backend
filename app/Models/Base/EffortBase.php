@@ -2,10 +2,11 @@
 
 namespace App\Models\Base;
 
+use App\Models\AbstractModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EffortBase extends Model
+class EffortBase extends AbstractModel
 {
     use HasFactory;
 }

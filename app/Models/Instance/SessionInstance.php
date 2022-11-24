@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class SessionInstance extends AbstractModel
 {
-    use HasFactory;
-
     protected $fillable = [
         'session_id'
     ];
