@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Actions\GetExerciseData;
 use App\Actions\SaveSessionInstance;
-use App\Models\SessionInstance;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class InstanceController extends AbstractController
 {

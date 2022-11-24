@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Instance;
 
+use App\Models\AbstractModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
 class SessionInstance extends AbstractModel
 {

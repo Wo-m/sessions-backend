@@ -3,7 +3,7 @@
 namespace App\Actions;
 
 use App\Http\Resources\ExerciseInstanceResource;
-use App\Models\ExerciseInstance;
+use App\Models\Instance\ExerciseInstance;
 use Lorisleiva\Actions\Concerns\AsAction;
 
 class GetExerciseData

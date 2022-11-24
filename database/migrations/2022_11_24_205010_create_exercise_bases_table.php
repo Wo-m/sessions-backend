@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('exercise_instances', function (Blueprint $table) {
+        Schema::create('exercise_bases', function (Blueprint $table) {
             $table->id();
             $table->integer('inserted_by');
             $table->timestamps();
             $table->foreignId('exercise_id');  // maps to exercise for name
-            $table->foreignId('session_instance_id');  // sessionI has 1 - M for sessionI to exerciseI
+            $table->foreignId('session_base_id');  // sessionB has 1 - M for sessionI to exerciseI
             $table->string('type'); // Indicates whether to search to Efforts or Cardio table
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('exercise_instances');
+        Schema::dropIfExists('exercise_bases');
     }
 };

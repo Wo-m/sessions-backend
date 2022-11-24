@@ -1,10 +1,17 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Instance;
 
+use App\Models\AbstractModel;
+use App\Models\Exercise;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Instance of an exercise
+ * Either maps to multiple efforts
+ * or multiple cardios (multiple for intervals)
+ * (cannot be both)
+ */
 class ExerciseInstance extends AbstractModel
 {
     use HasFactory;
@@ -16,6 +23,11 @@ class ExerciseInstance extends AbstractModel
     public function efforts()
     {
         return $this->hasMany(Effort::class);
+    }
+
+    public function cardios()
+    {
+        return $this->hasMany(Cardio::class);
     }
 
     public function exercise() {

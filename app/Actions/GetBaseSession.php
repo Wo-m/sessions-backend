@@ -3,9 +3,7 @@
 namespace App\Actions;
 
 use App\Http\Resources\SessionInstanceResource;
-use App\Http\Resources\SessionResource;
-use App\Models\Session;
-use App\Models\SessionInstance;
+use App\Models\Instance\SessionInstance;
 use Lorisleiva\Actions\Concerns\AsAction;
 
 class GetBaseSession

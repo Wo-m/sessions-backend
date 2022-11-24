@@ -3,9 +3,9 @@
 namespace App\Actions;
 
 use App\Http\Resources\SessionInstanceResource;
-use App\Models\Effort;
-use App\Models\ExerciseInstance;
-use App\Models\SessionInstance;
+use App\Models\Instance\Effort;
+use App\Models\Instance\ExerciseInstance;
+use App\Models\Instance\SessionInstance;
 use Illuminate\Support\Facades\DB;
 use Lorisleiva\Actions\Concerns\AsAction;
 

@@ -5,13 +5,7 @@ namespace App\Http\Controllers;
 use App\Actions\GetBaseSession;
 use App\Actions\SaveExercise;
 use App\Actions\SaveSession;
-use App\Http\Resources\SessionResource;
-use App\Models\Effort;
-use App\Models\ExerciseInstance;
-use App\Models\Session;
-use App\Models\SessionInstance;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class ReferenceController extends AbstractController
 {
