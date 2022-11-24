@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('inserted_by');
             $table->timestamps();
             $table->foreignId('session_id');
+            $table->foreignId('program_instance_id');  // maps ProgramInstance if its part of a program
         });
     }
 

@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sessions', function (Blueprint $table) {
+        Schema::create('programs', function (Blueprint $table) {
             $table->id();
             $table->integer('inserted_by');
             $table->timestamps();
             $table->string('name');
             $table->boolean('isPublic');
-            $table->foreignId('program_session_id');  // maps ProgramSession if its part of a program
+            $table->integer('period_length'); // number of days for a period (7 for a week)
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('programs');
     }
 };

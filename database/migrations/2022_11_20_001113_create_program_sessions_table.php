@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sessions', function (Blueprint $table) {
+        Schema::create('program_sessions', function (Blueprint $table) {
             $table->id();
             $table->integer('inserted_by');
             $table->timestamps();
-            $table->string('name');
-            $table->boolean('isPublic');
-            $table->foreignId('program_session_id');  // maps ProgramSession if its part of a program
+            $table->foreignId('program_id');  // maps to program
+            $table->integer('break');  // rest period (days until next session)
+            // i.e. 0 means can do another session on the same day, 1 means can do a session the next day
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('program_sessions');
     }
 };
