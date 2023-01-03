@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('inserted_by');
             $table->timestamps();
             $table->foreignId('exercise_id');  // maps to exercise for name
-            $table->foreignId('session_base_id');  // sessionB has 1 - M for sessionI to exerciseI
+            $table->foreignId('session_base_id');  // sessionB has 1 - M for sessionB to exerciseB
             $table->string('type'); // Indicates whether to search to Efforts or Cardio table
         });
     }

@@ -2,13 +2,12 @@
 
 namespace App\Models\Reference;
 
+use App\Models\AbstractModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProgramSession extends Model
+class ProgramSession extends AbstractModel
 {
-    use HasFactory;
-
     public function session()
     {
         return $this->hasOne(Session::class);
