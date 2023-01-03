@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('session_bases', function (Blueprint $table) {
             $table->id();
+            $table->integer('inserted_by');
             $table->timestamps();
+            $table->foreignId('session_id');
         });
     }
 

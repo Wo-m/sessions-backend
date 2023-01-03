@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('inserted_by');
             $table->timestamps();
-            $table->foreignId('exercise_instance_id');
+            $table->foreignId('exercise_base_id');
             $table->integer('set');
             $table->integer('reps');
         });

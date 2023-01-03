@@ -2,14 +2,13 @@
 
 namespace App\Models\Reference;
 
+use App\Models\AbstractModel;
 use App\Models\Instance\ProgramInstance;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Program extends Model
+class Program extends AbstractModel
 {
-    use HasFactory;
-
     // Used to create instances
     public function sessions()
     {

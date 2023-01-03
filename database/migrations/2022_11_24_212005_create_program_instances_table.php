@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('inserted_by');
             $table->timestamps();
             $table->foreignId('program_id');  // maps to program
-            $table->date('start'); // start of session
+            $table->date('start'); // start date of program
             $table->integer('periods'); // number of periods this instance goes for
         });
     }
