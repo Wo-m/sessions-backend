@@ -6,7 +6,7 @@ use App\Models\AbstractModel;
 
 class ProgramInstance extends AbstractModel
 {
-    public function instances()
+    public function sessions()
     {
         return $this->hasMany(SessionInstance::class);
     }

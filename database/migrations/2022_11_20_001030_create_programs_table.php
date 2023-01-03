@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('inserted_by');
             $table->timestamps();
             $table->string('name');
-            $table->boolean('isPublic');
+            $table->boolean('is_public');
             $table->integer('period_length'); // number of days for a period (7 for a week)
         });
     }

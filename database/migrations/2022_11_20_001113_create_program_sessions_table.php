@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('inserted_by');
             $table->timestamps();
             $table->foreignId('program_id');  // maps to program
+            $table->integer('order');
             $table->integer('break');  // rest period (days until next session)
             // i.e. 0 means can do another session on the same day, 1 means can do a session the next day
         });
